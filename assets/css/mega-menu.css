@@ -451,8 +451,8 @@ button.mega-toggle-arrow {
   gap: 8px !important;
 }
 
-.mm-item figure,
-.metamint-main-nav .mm-item figure {
+.mm-item figure.wp-block-image,
+.metamint-main-nav .mm-item figure.wp-block-image {
   margin: 0;
   width: 28px;
 }
@@ -539,7 +539,15 @@ button.mega-toggle-arrow {
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px; */
   }
-
+  .mm-mobile-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+  .mm-mobile-flex {
+    display: flex !important;
+    flex-direction: column;
+  }
   button.mega-toggle-arrow {
     display: inline-flex !important;
     align-items: center;

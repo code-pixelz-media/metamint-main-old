@@ -42,6 +42,11 @@ if ($post_obj):
   $post = $post_obj;
   setup_postdata($post);
 
+  // Enqueue comment-reply script for threaded comments
+  if (comments_open($current_post_id) && get_option('thread_comments')) {
+    wp_enqueue_script('comment-reply');
+  }
+
   // Logo fallback for thumbnail
   $custom_logo_id  = get_theme_mod('custom_logo');
   $custom_logo_url = $custom_logo_id ? wp_get_attachment_image_url($custom_logo_id, 'medium') : '';
@@ -280,6 +285,19 @@ if ($post_obj):
     </section>
 
   </article>
+
+  <!-- ===================================================================
+       SECTION: Comments (Full Container Width Discussion & Reply Section)
+       =================================================================== -->
+  <?php if (comments_open($current_post_id) || get_comments_number($current_post_id)): ?>
+    <section class="mm-section mm-wrap mm-single-comments-section" id="comments">
+      <?php
+      global $withcomments;
+      $withcomments = true;
+      comments_template();
+      ?>
+    </section>
+  <?php endif; ?>
 
   <?php wp_reset_postdata(); ?>
 

@@ -150,6 +150,7 @@ add_filter('rest_pre_dispatch', function ($result, $server, $request) {
 require_once METAMINT_DIR . '/acf-config.php';
 require_once METAMINT_DIR . '/inc/acf-functions.php';
 require_once get_theme_file_path('/inc/block-assets.php');
+require_once get_theme_file_path('/inc/column-link.php');
 
 
 /**
