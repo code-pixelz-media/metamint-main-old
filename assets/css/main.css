@@ -2327,6 +2327,12 @@ body.single-post .entry-content ul li,
 body.single-post .entry-content ol li {
   padding: 0 !important;
 }
+.mmhd-frontend-dashboard nav.desktop-menu {
+  background: #f6f6f6;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
 .woocommerce-account .woocommerce-MyAccount-navigation {
   float: left;
   width: 30%;
